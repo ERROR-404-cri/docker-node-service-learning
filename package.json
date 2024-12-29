@@ -1,0 +1,21 @@
+{
+  "name": "docker-project-1",
+  "version": "1.0.0",
+  "description": "simple docker project for learning",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "scripts": {
+    "start:service:1": "nodemon index.js",
+    "start:service:2": "nodemon service2.js",
+    "start:both": "yarn start:service:1 & yarn start:service:2",
+    "docker:build:up": "docker compose up --build",
+    "docker:build": "docker compose build"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
