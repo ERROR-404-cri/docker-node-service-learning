@@ -1,0 +1,14 @@
+services:
+  node_service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: cric404/sample-node-service-app
+    container_name: node-service-container
+    ports:
+      - "${PORT}:${PORT}"
+      - "${PORT_SERVICE_2}:${PORT_SERVICE_2}"
+
+    environment:
+      - PORT=${PORT}
+      - PORT_SERVICE_2=${PORT_SERVICE_2}
