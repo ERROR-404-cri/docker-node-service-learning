@@ -12,3 +12,9 @@ services:
     environment:
       - PORT=${PORT}
       - PORT_SERVICE_2=${PORT_SERVICE_2}
+    volumes:
+      - node-server-volume1:/app/logs
+
+volumes:
+  node-server-volume1:
+    driver: local
