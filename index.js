@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const localData = require("./localdb.json");
+const { startLogging, router } = require("./logger_service");
 
 const app = express();
 
@@ -12,6 +13,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+startLogging();
+app.use(router);
 
 app.get("/", (req, res) => {
   const obj = {
